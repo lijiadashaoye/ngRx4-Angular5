@@ -21,7 +21,7 @@ export function reducer(state = initialState, action: fromActions.All): ArticleS
     }
   }	
 }
-
+// createFeatureSelector允许我们简单地通过它的特征名称来获取状态树的顶层特征状态属性
 export const getArticleState = createFeatureSelector<ArticleState>('articleState');
 
 export const getArticles = createSelector(

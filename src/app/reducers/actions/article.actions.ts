@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Article } from '../models/article';
+import { Article } from '../../models/article';
 
 export const JAVA = 'Java';
 export const ANGULAR = 'Angular';

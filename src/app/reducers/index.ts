@@ -1,8 +1,8 @@
 import { ActionReducerMap, ActionReducer, MetaReducer } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 
-import { ArticleState } from './article.reducer'
-import * as articleReducer from './article.reducer';
+import { ArticleState } from './reducer/article.reducer'
+import * as articleReducer from './reducer/article.reducer';
 
 // 以下是将所有的reducer进行归总,用于写到AppModule里进行注册
 // 但不同的模块还是使用不同的reducer
@@ -26,9 +26,8 @@ export function ReducerAll(reducer: ActionReducer<AppState>): ActionReducer<AppS
 // MetaReducer: 在应用中使用StoreModule配置的MetaReducer构成了 根的meta-reducer。
 export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [ReducerAll] : [];
 
-
+// 包装称模块
 import { NgModule } from '@angular/core';
-
 // StoreModule: StoreModule是@ngrx/storeAPI中的一个模块，它被用来在应用模块中配置reducer。
 import { StoreModule } from '@ngrx/store';
 

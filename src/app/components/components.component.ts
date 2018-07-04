@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import * as fromActions from '../actions/article.actions';
+import * as fromActions from '../reducers/actions/article.actions';
 
 // 不同的模块还是使用不同的reducer，归总只是为了在跟模块进行注册
-import * as articleReducer from '../reducers/article.reducer';
-import { ArticleState } from '../reducers/article.reducer';
+import * as articleReducer from '../reducers/reducer/article.reducer';
+import { ArticleState } from '../reducers/reducer/article.reducer';
 import { Article, FAVORITE_ARTICLES } from '../models/article';
 
 @Component({

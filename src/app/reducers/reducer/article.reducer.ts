@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Article, JAVA_ARTICLES, ANGULAR_ARTICLES } from '../models/article';
+import { Article, JAVA_ARTICLES, ANGULAR_ARTICLES } from '../../models/article';
 import * as fromActions from '../actions/article.actions'
 
 export interface ArticleState {

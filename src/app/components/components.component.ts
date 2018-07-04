@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 import * as fromActions from '../reducers/actions/article.actions';
 
 // 不同的模块还是使用不同的reducer，归总只是为了在跟模块进行注册
-import * as articleReducer from '../reducers/reducer/article.reducer';
-import { ArticleState } from '../reducers/reducer/article.reducer';
+
+import { ArticleState, getArticles } from '../reducers/reducer/article.reducer';
 import { Article, FAVORITE_ARTICLES } from '../models/article';
 
 @Component({
@@ -22,7 +22,7 @@ export class ComponentsComponent implements OnInit {
   constructor(private store: Store<ArticleState>) { }
   ngOnInit() {
     // Store.select()用于选择一个selector
-    this.articles = this.store.select(articleReducer.getArticles);
+    this.articles = this.store.select(getArticles);
   }
   showJavaArticles() {  // Store.dispatch()用于向reducer分发action的类型
     this.store.dispatch(new fromActions.JavaArticleAction());

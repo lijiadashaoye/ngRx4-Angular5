@@ -6,9 +6,8 @@ export interface ArticleState {
     articles: Article[];
 }
 
-export const initialState: ArticleState = { articles: [] };
-
-export function reducer(state = initialState, action: fromActions.All): ArticleState {
+const initialState: ArticleState = { articles: [] };  // 定义初始化状态
+export function artReducer(state = initialState, action: fromActions.All): ArticleState {
     switch (action.type) {
         case fromActions.JAVA: {
             return { articles: JAVA_ARTICLES };
@@ -23,7 +22,7 @@ export function reducer(state = initialState, action: fromActions.All): ArticleS
     }
 }
 
-export const getArticleState = createFeatureSelector<ArticleState>('articleState');
+const getArticleState = createFeatureSelector<ArticleState>('articleState');
 // createSelector 可以有很多个参数，但最后一个必须是返回state的函数
 export const getArticles = createSelector(
     getArticleState,

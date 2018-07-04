@@ -24,6 +24,7 @@ export function reducer(state = initialState, action: fromActions.All): ArticleS
 }
 
 export const getArticleState = createFeatureSelector<ArticleState>('articleState');
+// createSelector 可以有很多个参数，但最后一个必须是返回state的函数
 export const getArticles = createSelector(
     getArticleState,
     (state: ArticleState) => state.articles

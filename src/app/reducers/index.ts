@@ -16,7 +16,7 @@ export const reducerAll: ActionReducerMap<AppState> = {   // 归总reducer
     articleState: articleReducer.reducer
 }
 
-  // ActionReducer: 它被用于创建reducer，例如 ReducerAll
+// ActionReducer: 它被用于创建reducer，例如 ReducerAll
 export function ReducerAll(reducer: ActionReducer<AppState>): ActionReducer<AppState> {  // 编写reduc方法
     return function (state: AppState, action: any) {
         return reducer(state, action)
@@ -25,3 +25,16 @@ export function ReducerAll(reducer: ActionReducer<AppState>): ActionReducer<AppS
 
 // MetaReducer: 在应用中使用StoreModule配置的MetaReducer构成了 根的meta-reducer。
 export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [ReducerAll] : [];
+
+
+import { NgModule } from '@angular/core';
+
+// StoreModule: StoreModule是@ngrx/storeAPI中的一个模块，它被用来在应用模块中配置reducer。
+import { StoreModule } from '@ngrx/store';
+
+@NgModule({
+    imports: [
+        StoreModule.forRoot(reducerAll, { metaReducers })
+    ],
+})
+export class ReducerModule { }

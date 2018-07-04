@@ -17,10 +17,10 @@ export class ArticleComponent {
 		this.articles = store.select(articleReducer.getArticles);
 	}
 	showJavaArticles(){
-		this.store.dispatch(new fromActions.JavaArticlesAction());
+		this.store.dispatch(new fromActions.JavaArticleAction());
 	}
 	showAngularArticles(){
-		this.store.dispatch(new fromActions.AngularArticlesAction());
+		this.store.dispatch(new fromActions.AngularArticleAction());
 	}
 	showFavoriteArticles(){
 		this.store.dispatch(new fromActions.FavoriteArticlesAction(FAVORITE_ARTICLES));

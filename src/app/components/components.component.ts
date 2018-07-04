@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+// Store: 它提供了Store.select()和Store.dispatch()来与reducer协同工作。
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -19,9 +21,10 @@ export class ComponentsComponent implements OnInit {
 
   constructor(private store: Store<ArticleState>) { }
   ngOnInit() {
+    // Store.select()用于选择一个selector
     this.articles = this.store.select(articleReducer.getArticles);
   }
-  showJavaArticles() {
+  showJavaArticles() {  // Store.dispatch()用于向reducer分发action的类型
     this.store.dispatch(new fromActions.JavaArticleAction());
   }
   showAngularArticles() {

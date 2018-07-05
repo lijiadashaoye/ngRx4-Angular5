@@ -6,7 +6,8 @@ export interface ArticleState {
     articles: Article[];
 }
 
-const initialState: ArticleState = { articles: [] };  // 定义初始化状态
+const initialState: ArticleState = { articles: [] };
+
 export function artReducer(state = initialState, action: fromActions.All): ArticleState {
     switch (action.type) {
         case fromActions.JAVA: {

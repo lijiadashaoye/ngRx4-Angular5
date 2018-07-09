@@ -33,6 +33,8 @@ import { StoreModule } from '@ngrx/store';
 @NgModule({
     imports: [
         StoreModule.forRoot(reducerAll, { metaReducers }),
+        // 当懒加载的模块中含有reducer时，用 forFeature 作为引入module模块的方法
+        // StoreModule.forFeature('feature', FEATURE_REDUCER_TOKEN),
     ],
 })
 export class ReducerModule { }

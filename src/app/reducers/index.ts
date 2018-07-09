@@ -25,6 +25,7 @@ function ReducerAll(reducer: ActionReducer<AppState>): ActionReducer<AppState> {
 // MetaReducer: 在应用中使用StoreModule配置的MetaReducer构成了 根的meta-reducer。
 const metaReducers: MetaReducer<AppState>[] = !environment.production ? [ReducerAll] : [];
 
+///////////////////////////////////////////////////////////////////////////////////////
 // 包装成模块
 import { NgModule } from '@angular/core';
 // StoreModule: StoreModule是@ngrx/storeAPI中的一个模块，它被用来在应用模块中配置reducer。

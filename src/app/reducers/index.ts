@@ -1,7 +1,7 @@
 import { ActionReducerMap, ActionReducer, MetaReducer } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 
-import { ArticleState, artReducer } from './reducer/article.reducer'
+import { ArticleState, artReducer } from './reducer/article.reducer';
 
 // 以下是将所有的reducer进行归总,用于写到AppModule里进行注册
 // 但不同的模块还是使用不同的reducer
@@ -32,7 +32,7 @@ import { StoreModule } from '@ngrx/store';
 
 @NgModule({
     imports: [
-        StoreModule.forRoot(reducerAll, { metaReducers })
+        StoreModule.forRoot(reducerAll, { metaReducers }),
     ],
 })
 export class ReducerModule { }

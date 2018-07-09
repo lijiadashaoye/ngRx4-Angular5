@@ -17,12 +17,12 @@ import { Article, FAVORITE_ARTICLES } from '../models/article';
   styleUrls: ['./components.component.css']
 })
 export class ComponentsComponent implements OnInit {
-  articles: Observable<Article[]>;
+  articles$: Observable<Article[]>;
 
   constructor(private store: Store<ArticleState>) { }
   ngOnInit() {
     // Store.select()用于选择一个selector
-    this.articles = this.store.select(getArticles);
+    this.articles$ = this.store.select(getArticles);
   }
   showJavaArticles() {  // Store.dispatch()用于向reducer分发action的类型
     this.store.dispatch(new fromActions.JavaArticleAction());

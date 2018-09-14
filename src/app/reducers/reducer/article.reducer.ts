@@ -10,13 +10,13 @@ const initialState: ArticleState = { articles: [] };
 
 export function artReducer(state = initialState, action: fromActions.All): ArticleState {
     switch (action.type) {
-        case fromActions.JAVA: {
+        case fromActions.CounterActionTypes.JAVA: {
             return { articles: JAVA_ARTICLES };
         }
-        case fromActions.ANGULAR: {
+        case fromActions.CounterActionTypes.ANGULAR: {
             return { articles: ANGULAR_ARTICLES };
         }
-        case fromActions.MY_ARTICLES: {
+        case fromActions.CounterActionTypes.MY_ARTICLES: {
             return { articles: action.payload };
         }
         default: return state;
